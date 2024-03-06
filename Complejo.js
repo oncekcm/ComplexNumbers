@@ -1,3 +1,10 @@
+// Ingenieria de Sotfware
+// Operaciones sobre numeros complejos
+//
+// @author Beimar Choque Mamani
+// @version 1.0
+// @date 2024-03-05
+
 class Principal {
     constructor() {
         console.log("Operaciones con números complejos:");
