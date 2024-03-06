@@ -13,6 +13,18 @@ class principal{
         Complex z=new Complex(0,0);
         z=x.adition(y);
         System.out.println(z.toStr());
+        
+        // Realizar la multiplicación de los números complejos x e y
+        Complex z2 = x.multiply(y);
+        System.out.println("Multiplicación: " + z2.toString());
+        
+        // Realizar la división de los números complejos x e y
+        Complex z3 = x.divide(y);
+        System.out.println("División: " + z3.toString());
+        
+        // Obtener el conjugado del número complejo x
+        Complex conjugateX = x.conjugate();
+        System.out.println("Conjugado de x: " + conjugateX.toString());
     }
 }
 
@@ -28,6 +40,27 @@ class Complex {
         z.real=this.real + y.real;
         z.img=this.img + y.img;
         return(z);
+    }
+    // Método para realizar la multiplicación de dos números complejos
+    Complex multiply(Complex y) {
+        Complex z = new Complex(0, 0);
+        z.real = this.real * y.real - this.imag * y.imag;
+        z.imag = this.real * y.imag + this.imag * y.real;
+        return z;
+    }
+    
+    // Método para realizar la división de dos números complejos
+    Complex divide(Complex y) {
+        Complex z = new Complex(0, 0);
+        int denom = y.real * y.real + y.imag * y.imag;
+        z.real = (this.real * y.real + this.imag * y.imag) / denom;
+        z.imag = (this.imag * y.real - this.real * y.imag) / denom;
+        return z;
+    }
+    
+    // Método para calcular el conjugado de un número complejo
+    Complex conjugate() {
+        return new Complex(this.real, -this.imag);
     }
     String toStr(){
         return (String.valueOf(this.real)+ "+" + String.valueOf(this.img)+"i");
