@@ -4,7 +4,7 @@
 //@author Beimar Choque Mamani
 //@version 1.0
 //@date 2024-03-05
-
+import java.lang.Math;
 class principal{
     public static void main(String[] args){
         System.out.println("Operaciones con números complejos");
